@@ -1,9 +1,10 @@
-'use client';
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import logo from "../../public/image/logo.png";
 import "./globals.css";
 import "./page.css";
-import { useState } from "react";
 
 export default function RootLayout({
   children,
@@ -52,11 +53,19 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body>
         <header className="header">
           <div className="logo-container">
-            <Image src={logo} alt="logo" width={100} height={100} />
+            <Link href="/" passHlegacyBehavior>
+              <Image src={logo} alt="logo" width={100} height={100} />
+            </Link>
           </div>
+          <Link href="/pets" passHlegacyBehavior>
+            <button type="button">IR PARA PETS</button>
+          </Link>
 
           <div className="login-container">
             {!isLoggedIn ? (
