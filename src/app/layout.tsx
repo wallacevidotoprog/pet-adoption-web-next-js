@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import logo from "../../public/image/logo.png";
-import Loading from "./components/loading/Loading";
-import UserPage from "./components/user-page/login";
 import "./globals.css";
 import style from "./page.module.css";
+import UserPage from "@/components/user-page/login";
+import Loading from "@/components/loading/Loading";
 
 export default function RootLayout({
   children,
@@ -23,13 +23,44 @@ export default function RootLayout({
         <header className={style.header}>
           <div className={style.logoContainer}>
             <Link href="/">
-              <Image src={logo} alt="logo" width={100} height={100} />
+              <Image src={logo} alt="logo" width={80} height={80} />
             </Link>
           </div>
-          <Link href="/pets">
-            <button type="button">IR PARA PETS</button>
-          </Link>
-          <UserPage />
+
+          <nav className={style.navMenu}>
+            <input
+              type="checkbox"
+              id={style.menuToggle}
+              className={style.menuToggle}
+            />
+            <label htmlFor={style.menuToggle} className={style.menuButton}>
+              <span>a</span>
+              <span>b</span>
+              <span>c</span>
+            </label>
+
+            <ul className={style.menuList}>
+              <li>
+                <Link href="/pets" className={style.menuLink}>
+                  PETS
+                </Link>
+              </li>
+              <li>
+                <Link href="/sobre" className={style.menuLink}>
+                  SOBRE
+                </Link>
+              </li>
+              <li>
+                <Link href="/contato" className={style.menuLink}>
+                  CONTATO
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          <div className={style.btnLogin}>
+            <UserPage />
+          </div>
         </header>
         {children}
         {loading && <Loading />}

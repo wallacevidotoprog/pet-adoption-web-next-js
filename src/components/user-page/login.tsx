@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import logo from "../../../../public/image/logo.png";
+import logo from "@public/image/logo.png";
 import LoginModal from "./LoginModal";
 import "./login.css";
 import UserModal from "./modalUser";

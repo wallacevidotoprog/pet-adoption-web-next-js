@@ -1,0 +1,147 @@
+<form
+action="/quero-adotar#pets"
+className="bg-white flex flex-col md:gap-2 mx-auto rounded-lg mb-5 p-5 pt-0"
+method="get"
+>
+<div className="flex flex-col md:gap-2 sm:flex-row">
+  <div className="flex-1 form-field">
+    <select id="specie" name="specie">
+      <option value="">Todas as espécies</option>
+      <option value="dog">Cachorro</option>
+      <option value="cat">Gato</option>
+    </select>
+  </div>
+
+  <div className="flex-1 form-field">
+    <select id="sex" name="sex">
+      <option value="">Todos os sexos</option>
+      <option value="male">Macho</option>
+      <option value="female">Fêmea</option>
+    </select>
+  </div>
+
+  <div className="flex-1 form-field">
+    <select id="size" name="size">
+      <option value="">Todos os portes</option>
+      <option value="small">Porte pequeno</option>
+      <option value="medium">Porte médio</option>
+      <option value="big">Porte grande</option>
+    </select>
+  </div>
+</div>
+
+<div id="v-location" className="flex flex-col md:gap-2 sm:flex-row">
+  <div className="flex-1 form-field">
+    <select id="state_id" name="state_id">
+      <option selected="selected" value="">
+        Todos os Estados
+      </option>{" "}
+      <option value="60e5aadb-514a-4571-842f-c1e676d692fa">Acre</option>
+      <option value="340488c0-a53d-4300-93dd-6047f3892da1">
+        Alagoas
+      </option>
+      <option value="169cc2b0-c1af-4442-b484-9540edc1891b">
+        Amapá
+      </option>
+      <option value="976d1086-e957-4bb2-87cc-25e044d7123a">
+        Amazonas
+      </option>
+      <option value="a43debfe-0815-428b-8bbc-fc4a6237d96b">
+        Bahia
+      </option>
+      <option value="e3c7e476-a84a-4e41-9445-ad78ac671839">
+        Ceará
+      </option>
+      <option value="a627c920-2d41-4399-974c-c1037916814b">
+        Distrito Federal
+      </option>
+      <option value="982eec65-4f28-4ab8-bde2-ff8673aa7fb9">
+        Espírito Santo
+      </option>
+      <option value="38061435-2029-41df-8652-83b549b3c995">
+        Goiás
+      </option>
+      <option value="ee794588-6928-4e1e-b499-a2ce81bc0991">
+        Maranhão
+      </option>
+      <option value="0fdd7257-1c46-4b90-80fb-5a439adaba83">
+        Mato Grosso
+      </option>
+      <option value="e959d023-713e-4ae1-880b-55b8d3071d74">
+        Mato Grosso do Sul
+      </option>
+      <option value="f464a3ae-f3b7-4d78-819e-2d1a93976bc5">
+        Minas Gerais
+      </option>
+      <option value="f8539e73-b8fc-4b04-923b-e4b6905fb0ee">Pará</option>
+      <option value="908d2dee-d0fd-42a6-a669-17f3df0b6de8">
+        Paraíba
+      </option>
+      <option value="69aecd6a-152f-414c-b7f2-dfc3947f8920">
+        Paraná
+      </option>
+      <option value="b9b04c9e-debe-4eed-bf4f-d9619d08ec44">
+        Pernambuco
+      </option>
+      <option value="7c83bd72-5201-43b2-977f-97cb671c88de">
+        Piauí
+      </option>
+      <option value="8dd6f2bc-baa2-45a6-98ea-78602c8d3918">
+        Rio de Janeiro
+      </option>
+      <option value="ea85fd92-fbc5-40a9-b423-a4f993abc42e">
+        Rio Grande do Norte
+      </option>
+      <option value="564777ad-664e-4e78-b6b0-40772c55ce4a">
+        Rio Grande do Sul
+      </option>
+      <option value="f66705a1-e4df-4de1-ab64-0341554bce88">
+        Rondônia
+      </option>
+      <option value="b77995b5-f076-41c8-9f67-41eb69ee71b1">
+        Roraima
+      </option>
+      <option value="478b0962-26d0-4a5e-9420-4a5bc6bc6e44">
+        Santa Catarina
+      </option>
+      <option value="0080b121-a063-486b-9522-b1c5566a6588">
+        São Paulo
+      </option>
+      <option value="ba7978b5-a8e0-4ecd-a500-33bedfa1172e">
+        Sergipe
+      </option>
+      <option value="8151b25c-1882-433f-b5e4-2c6e96f8ef97">
+        Tocantins
+      </option>
+    </select>
+  </div>
+  <div className="flex-1 form-field">
+    <select id="city_id" name="city_id">
+      <option selected="selected" value="">
+        Todas as Cidades
+      </option>{" "}
+    </select>
+  </div>{" "}
+  <div className="flex-1 form-field">
+    <select id="available" name="available">
+      <option value="">Todos os status</option>
+      <option value="false">Somente adotados</option>
+      <option value="true">Somente disponíveis</option>
+    </select>
+  </div>{" "}
+  <div className="flex-1 form-field">
+    <input
+      id="name"
+      name="name"
+      placeholder="Nome do bicho"
+      type="text"
+    />
+  </div>{" "}
+  <div className="flex-1 form-field">
+    <button type="submit" className="primary-button w-full">
+      Buscar
+    </button>
+  </div>{" "}
+  <input id="sort_by" name="sort_by" type="hidden" value="random" />
+</div>
+</form>
