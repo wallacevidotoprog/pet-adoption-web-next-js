@@ -1,31 +1,36 @@
-'use client';
-import styles from "./page.module.css";
+"use client";
+import { Pets } from "@/@types/basedb.types";
+import noFavorite from "@public/image/no-favorite.png";
+import Image from "next/image";
+import "./page.css";
 
-type Pet = {
-  id: number;
-  nome: string;
-  tipo: string;
-  raca?: string;
-  imagens?: string[];
-};
-
-export default function PetCard({ pet }: { pet: Pet }) {
+export default function PetCard({ pet }: { pet: Pets }) {
   return (
-    <div className={styles.card}>
-      <img
-        src={pet.imagens?.[0] || "https://placehold.co/300x200"}
-        alt={pet.nome}
-        className={styles.image}
-      />
-      <div className={styles.info}>
-        <h2>{pet.nome}</h2>
-        <p>
-          {pet.tipo} • {pet.raca}
-        </p>
-        <button onClick={() => alert(`Detalhes de ${pet.nome}`)}>
-          Ver mais
-        </button>
+    <>
+      <div className="card">
+        <img
+          src={pet.images?.[0] || "https://placehold.co/300x200"}
+          alt={pet.name}
+          className="image"
+        />
+        <div className="info">
+          <div className="tag">
+            {pet.type} • {pet.breed}
+          </div>
+          <div className="name">
+            <h2>{pet.name}</h2>
+            <Image src={noFavorite} alt="favorite" className="favorite" />
+          </div>
+          <p className="description"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis aliquid, voluptatibus hic neque explicabo nobis. Totam nisi esse veniam repellendus, dignissimos sint quas exercitationem commodi debitis vel earum eos enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic libero aperiam similique fugiat quo commodi obcaecati suscipit atque itaque inventore dolorem laudantium pariatur in molestiae quasi, iure cumque neque voluptatibus.
+          {/* // {pet.description} */}
+          </p>
+          <div>
+            <button onClick={() => alert(`Detalhes de ${pet.breed}`)}>
+              Ver mais
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

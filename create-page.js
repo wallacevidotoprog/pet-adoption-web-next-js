@@ -29,7 +29,9 @@ export default function ${inputName}() {
 }`;
 
 const contentCss = `.container{
-
+display:flex;
+justify-content: center;
+alingn-item center
 }
 `;
 
